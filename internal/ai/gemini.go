@@ -51,7 +51,7 @@ func (g *GeminiProvider) GenerateCommitMsg(diff string) (string, error) {
 	prompt := fmt.Sprintf("%s\n\nCode diff:\n%s", SystemPrompt, diff)
 	
 	// Use gemini-1.5-flash as it's the current recommended model
-	url := fmt.Sprintf("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=%s", g.apiKey)
+	url := fmt.Sprintf("https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=%s", g.apiKey)
 	
 	reqBody := GeminiRequest{
 		Contents: []GeminiContent{
